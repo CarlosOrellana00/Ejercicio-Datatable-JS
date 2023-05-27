@@ -1,13 +1,17 @@
 let dataTable;
 let dataTableIsInitialized = false;
 
+const dataTableOptions = {
+  pageLength: 3
+};
+
 const initDataTable = async () =>{
   if(dataTableIsInitialized){
     dataTable.destroy();
   }
   await listUsers();
 
-  dataTable = $("#datatable_users").DataTable({});
+  dataTable = $("#datatable_users").DataTable(dataTableOptions);
 
   dataTableIsInitialized = true;
 }
