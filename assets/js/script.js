@@ -2,6 +2,7 @@ let dataTable;
 let dataTableIsInitialized = false;
 
 const dataTableOptions = {
+  columnDefs: [{ className: "centered", targets:[0,1,2,3,4] }],
   pageLength: 3,
   destroy: true,
   language: {
