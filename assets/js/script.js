@@ -1,13 +1,14 @@
 let dataTable;
 let dataTableIsInitialized = false;
 
-const initDataTable = async()=>{
+const initDataTable = async () =>{
   if(dataTableIsInitialized){
     dataTable.destroy();
   }
   await listUsers();
 
   dataTable = $("#datatable_users").DataTable({});
+
   dataTableIsInitialized = true;
 }
 
@@ -34,6 +35,6 @@ const listUsers = async () => {
 };
 
 window.addEventListener("load", async () => {
-  await listUsers();
-  // await initDataTable;
+  // await listUsers();
+  await initDataTable();
 });
