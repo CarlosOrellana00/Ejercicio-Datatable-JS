@@ -2,7 +2,7 @@ let dataTable;
 let dataTableIsInitialized = false;
 
 const dataTableOptions = {
-  columnDefs: [{ className: "centered", targets:[0,1,2,3,4] }],
+  columnDefs: [{ className: "centered", targets:[0,1,2,3,4,5,6] }],
   pageLength: 3,
   destroy: true,
   language: {
@@ -47,6 +47,12 @@ const listUsers = async () => {
         <td>${user.email}</td>
         <td>${user.address.city}</td>
         <td>${user.company.name}</td>
+        <td><i class="fa-solid fa-check" style="color: green;"></i></td>
+        <td>
+          <button type="button" class="btn btn-primary"><i class="fa-solid fa-jet-fighter"></i></i></button>
+          <button type="button" class="btn btn-dark"><i class="fa-solid fa-ship"></i></button>
+          <button type="button" class="btn btn-info"><i class="fa-solid fa-car-burst"></i></button>
+        </td>
       </tr>`;
     });
     tableBody_users.innerHTML = content;
