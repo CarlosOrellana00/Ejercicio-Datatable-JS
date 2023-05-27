@@ -2,7 +2,13 @@ let dataTable;
 let dataTableIsInitialized = false;
 
 const initDataTable = async()=>{
+  if(dataTableIsInitialized){
+    dataTable.destroy();
+  }
+  await listUsers();
 
+  dataTable = $("#datatable_users").DataTable({});
+  dataTableIsInitialized = true;
 }
 
 const listUsers = async () => {
@@ -19,7 +25,7 @@ const listUsers = async () => {
         <td>${user.email}</td>
         <td>${user.address.city}</td>
         <td>${user.company.name}</td>
-      </tr>`
+      </tr>`;
     });
     tableBody_users.innerHTML = content;
   }catch(ex){
@@ -29,4 +35,5 @@ const listUsers = async () => {
 
 window.addEventListener("load", async () => {
   await listUsers();
+  // await initDataTable;
 });
