@@ -2,7 +2,12 @@ let dataTable;
 let dataTableIsInitialized = false;
 
 const dataTableOptions = {
-  columnDefs: [{ className: "centered", targets:[0,1,2,3,4,5,6] }],
+  // scrollX: "2000px",
+  columnDefs: [
+    { className: "centered", targets:[0,1,2,3,4,5,6] },
+    { orderable: false, targets: [5,6] },
+    // { width: "50%", targets:[0]}
+  ],
   pageLength: 3,
   destroy: true,
   language: {
