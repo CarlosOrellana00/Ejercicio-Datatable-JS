@@ -3,6 +3,7 @@ let dataTableIsInitialized = false;
 
 const dataTableOptions = {
   // scrollX: "2000px",
+  lengthMenu: [5,10,15,20,25,100,200],
   columnDefs: [
     { className: "centered", targets:[0,1,2,3,4,5,6] },
     { orderable: false, targets: [5,6] },
